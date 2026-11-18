@@ -22,9 +22,9 @@ Now, let's check which columns are reflected on the website by passing the follo
 ' UNION SELECT 1,2,3,4 -- -
 ```
 
-![reflected](../images/flower2.png)
-
 This will determine where we can place our SQL syntax to fetch the desired data.
+
+![reflected](../images/flower2.png)
 
 We can now retrieve the table names in the database and display the output in the desired column on the website by using the following payload:
 
