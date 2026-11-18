@@ -70,11 +70,11 @@ The result showed the available columns in the table. I then retrieved the user 
 
 ![User table data](../images/vv8.png)
 
-The output exposed user information, including email addresses, password hashes, and display names. I also checked the profile page to view the account information displayed by the application.
+The output exposed user information, including email addresses, password hashes, and display names. I observed that the password hashes for Alice and Camila are the same, which indicates that they share the same password. I successfully logged in using Camila’s profile page and viewed the account information displayed by the application to see if the flag appears on her account.
 
 ![User profile](../images/vv9.png)
 
-After examining the `users` table, I proceeded to inspect the `admin_vouchers` table. I first retrieved its column names using:
+After examining the `users` table, no flag was found. I proceeded to inspect the `admin_vouchers` table. I first retrieved its column names using:
 
 ```sql
 ' UNION SELECT 1,GROUP_CONCAT(column_name),3 FROM information_schema.columns WHERE table_name='admin_vouchers' -- -
