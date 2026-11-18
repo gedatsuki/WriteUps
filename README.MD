@@ -3,7 +3,7 @@
 A structured collection of my web application penetration testing write-ups, lab walkthroughs, and CTF challenge solutions.
 
 | Platforms | Link / Profile |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | **WebversePro** | [https://dashboard.webverselabs-pro.com/profile](https://dashboard.webverselabs-pro.com/profile) | [Webverse Writeups](./Webverse) |
 | **THM** | [https://tryhackme.com/p/gedatsuki](https://tryhackme.com/p/gedatsuki) | [THM Writeups](./THM) |
 | **PortSwigger** | [https://portswigger.net/web-security](https://portswigger.net/web-security) | [Portswigger Writeups](./Portswigger) |
