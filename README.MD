@@ -12,9 +12,9 @@ A structured collection of my web application penetration testing write-ups, lab
 
 # 🛡️ Webverse Writeups
 
-![webverselogo](./Webverse/images/webverse.png)
-
 A realistic engagement platform for a wide range of web penetration testing vulnerabilities, backed by structured modules, CTF-style labs, and challenges.
+
+![webverselogo](./Webverse/images/webverse.png)
 
 ---
 
