@@ -12,7 +12,7 @@ The repository is organized by **Platform / Lab** $\rightarrow$ **Vulnerability 
 
 | Category | Subcategories | Write-Ups |
 | :--- | :--- | :--- |
-| **Injections** | SQL, NoSQL, Command, LDAP | [flower.md](./Injections/flower.md) |
+| **Injections** | SQL, NoSQL, Command, LDAP | [flower](./Injections/flower.md) |
 | **XSS** | Reflected, Stored XSS, DOM-Based | *To be followed* |
 | **Broken Access Control** | IDOR & Broken Object-Level Auth, Mass Assignment, CSRF, Open Redirects | *To be followed* |
 | **Auth & Sessions** | Auth & Login Logic Flaws, Session & Cookies, JWT Attacks, MFA Bypass | *To be followed* |
