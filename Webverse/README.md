@@ -8,10 +8,12 @@ A structured collection of my web application penetration testing write-ups, lab
 
 The repository is organized by **Platform / Lab** $\rightarrow$ **Vulnerability Category** $\rightarrow$ **Challenge / Target**:
 
-```text
-WriteUps/
-├── Webverse/
-│   ├── Injections/
-│   │   └── flower.md
-│   └── ...
-└── README.md
+### 🌐 Webverse
+
+| Category | Subcategories | Write-Ups |
+| :--- | :--- | :--- |
+| **Injections** | SQL, NoSQL, Command, LDAP | [flower.md](./Webverse/Injections/flower.md) |
+| **XSS** | Reflected, Stored XSS, DOM-Based | *To be followed* |
+| **Broken Access Control** | IDOR & Broken Object-Level Auth, Mass Assignment, CSRF, Open Redirects | *To be followed* |
+| **Auth & Sessions** | Auth & Login Logic Flaws, Session & Cookies, JWT Attacks, MFA Bypass | *To be followed* |
+| **Server-Side Exploitation** | SSRF, XXE, File Upload Attacks, LFI & Path Traversal, Server-Side Template Injection, Insecure Deserialization | *To be followed* |
