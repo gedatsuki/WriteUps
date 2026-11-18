@@ -1,6 +1,6 @@
-# 🛡️ Web Pentesting WriteUps
+# 🛡️ Webverse Writeups
 
-A structured collection of my web application penetration testing write-ups, lab walkthroughs, and CTF challenge solutions.
+A realistic engagement platform for a wide range of web penetration testing vulnerabilities, backed by structured modules, CTF-style labs, and challenges.
 
 ---
 
