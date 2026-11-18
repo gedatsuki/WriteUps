@@ -10,7 +10,6 @@ A structured collection of my web application penetration testing write-ups, lab
 | **pwn.college** | [https://pwn.college/hacker/gedatsuki](https://pwn.college/hacker/gedatsuki) | [Pwn.College](./PwnCollege) |
 | **CyLab Academy** | [https://learn.cylabacademy.org/users/gedatsuki](https://learn.cylabacademy.org/users/gedatsuki) | [Cylab Academy](./CylabAcademy) |
 
-___
 # 🛡️ Webverse Writeups
 
 ![webverselogo](./Webverse/images/webverse.png)
