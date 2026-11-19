@@ -71,7 +71,7 @@ As we can see, the flag `WEBVERSE{…}` is now displayed on the website.
 
 ### Proven in this lab
 - **Unauthenticated database schema enumeration:** Enumerated all tables in the active database (`cart_items`, `flowers`, `messages`, `secrets`, and `users`) as well as the column structure of the `secrets` table (`id`, `key`, `value`) without requiring an account or authentication.
-- **Disclosure of sensitive application records:** Extracted the contents of the `secrets` table, exposing the challenge flag (`WEBVERSE{petals_union_in_bloom}`) and an internal operational reminder regarding monthly rotation of the POS vendor API key.
+- **Disclosure of sensitive application records:** Extracted the contents of the `secrets` table, exposing the challenge flag (`WEBVERSE{...}`) and an internal operational reminder regarding monthly rotation of the POS vendor API key.
 - **Server path and error disclosure:** Triggered verbose SQL and PHP error messages that exposed the underlying query structure and the web root file path (`/var/www/html/search.php`).
 
 ## Remediation Advice
