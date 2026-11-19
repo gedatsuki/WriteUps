@@ -1,4 +1,15 @@
-# Flower Writeup
+# Flower Challenge
+
+## Lab Description
+Flower Haven, a small neighborhood florist, recently launched an online store that is actively taking orders without prior security review. The objective was to browse the catalog, test the application's features, and observe how the shop responds to user input.
+
+## Summary
+The **Search the shop** functionality (`/var/www/html/search.php`) on the Flower Haven online store is vulnerable to unauthenticated SQL injection. Because user-supplied search queries are concatenated directly into a backend SQL query without parameterization, an unauthenticated visitor can manipulate the query structure using `UNION`-based payloads. This allows an attacker to enumerate the database schema and extract sensitive records stored in the application's database, including internal secrets and operational reminders.
+
+## Background
+SQL injection occurs when untrusted user input is dynamically embedded directly into a database query string rather than being handled separately as bound data. When the database interpreter evaluates the combined string, special characters such as a single quote (`'`) break out of the intended literal context and alter the structure of the SQL statement. In this application, the search input in `search.php` is interpolated directly into a `SELECT` query, allowing an attacker to append arbitrary `UNION SELECT` clauses and retrieve data from any table accessible to the database user.
+
+## Technical Details & Evidence
 
 I started by exploring the entire website to understand its site map and test its normal functionalities. I found multiple possible injectable inputs. Among all the possible injectable inputs, one stood out during testing.
 
@@ -55,3 +66,18 @@ To get the flag, we fetch the values from the `value` column indicated in the `s
 As we can see, the flag `WEBVERSE{…}` is now displayed on the website.
 
 ![flag](../images/flower6.png)
+
+## Impact
+
+### Proven in this lab
+- **Unauthenticated database schema enumeration:** Enumerated all tables in the active database (`cart_items`, `flowers`, `messages`, `secrets`, and `users`) as well as the column structure of the `secrets` table (`id`, `key`, `value`) without requiring an account or authentication.
+- **Disclosure of sensitive application records:** Extracted the contents of the `secrets` table, exposing the challenge flag (`WEBVERSE{petals_union_in_bloom}`) and an internal operational reminder regarding monthly rotation of the POS vendor API key.
+- **Server path and error disclosure:** Triggered verbose SQL and PHP error messages that exposed the underlying query structure and the web root file path (`/var/www/html/search.php`).
+
+## Remediation Advice
+
+1. **Use parameterized queries (prepared statements) for all database operations:** Update the search handler in `/var/www/html/search.php` (and across the rest of the application) so that user-supplied search terms are bound as parameters rather than concatenated directly into the SQL query string. Prepared statements separate SQL logic from user data, ensuring the database treats input strictly as literal search text.
+2. **Implement supplementary defence-in-depth controls:** The following controls provide additional layers of protection, though they are supplementary and must not be implemented in isolation as a substitute for parameterized queries:
+   - **Enforce least privilege on the database account:** Restrict the database user utilized by the web application so it only has access to the specific tables and operations required by the storefront, rather than sensitive administrative or secret-storage tables.
+   - **Apply server-side input validation:** Validate search queries against expected character sets and length limits before executing database lookups.
+3. **Disable verbose error messages in production:** Configure PHP and the database error handler in production to log detailed SQL syntax errors and PHP deprecation notices internally on the server while displaying generic, non-technical error messages to visitors.
