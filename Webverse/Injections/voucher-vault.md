@@ -1,4 +1,4 @@
-# SQL Injection in Search Vouchers Functionality
+# Voucher Vault Challenge
 
 ## Lab Description
 Redzone, a 600-employee insurance brokerage in Charlotte, launched an internal Rewards portal in early 2024 to replace an HR gift-card spreadsheet. The voucher search feature was built by a contractor and shipped alongside a new redemption tier reserved for the executive floor, while a scheduled security pass was dropped prior to launch. The objective of the assessment was to identify and exploit vulnerabilities in the portal to access restricted data.
